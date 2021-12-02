@@ -19,7 +19,9 @@ const connect = () => {
 
   conn.on("connect", () => {
     console.log("Connected to the server!");
+    conn.write("Name: Anh");
   });
+ 
   conn.on("close", () => {
     console.log("U ded cuz you idled! OUT!");
   });
