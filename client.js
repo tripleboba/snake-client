@@ -18,7 +18,7 @@ const connect = () => {
   conn.setEncoding("utf8"); // interpret incoming data as text
 
   conn.on("connect", () => {
-    console.log("Connecting...");
+    console.log("Connected to the server!");
   });
   conn.on("close", () => {
     console.log("U ded cuz you idled! OUT!");
@@ -26,5 +26,6 @@ const connect = () => {
 
   return conn;
 };
+console.log("Connecting...");
 
 module.exports = {connect}; // exports using es6 syntax
