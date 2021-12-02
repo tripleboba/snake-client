@@ -1,6 +1,7 @@
 /**
  * Local Server Play - npm run play
  * IP addresss: localhost
+ * 
  */
 
 const net = require("net");
@@ -21,13 +22,12 @@ const connect = () => {
     console.log("Connected to the server!");
     conn.write("Name: Anh");
   });
- 
   conn.on("close", () => {
-    console.log("U ded cuz you idled! OUT!");
+    console.log("Exited!");
   });
 
   return conn;
 };
-console.log("Connecting...");
+console.log("Connecting....");
 
 module.exports = {connect}; // exports using es6 syntax
