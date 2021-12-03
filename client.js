@@ -6,7 +6,7 @@
 
 const net = require("net");
 // establishes a connection with the game server
-const connect = () => {
+const connect = function() {
   /**
    *  using Node's net library (createConnection() func)
    * -> create an object named conn
@@ -18,12 +18,10 @@ const connect = () => {
   });
   conn.setEncoding("utf8"); // interpret incoming data as text
 
+  // events when connected
   conn.on("connect", () => {
     console.log("Connected to the server!");
     conn.write("Name: Anh");
-  });
-  conn.on("close", () => {
-    console.log("Exited!");
   });
 
   return conn;
