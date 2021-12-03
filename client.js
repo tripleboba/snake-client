@@ -1,10 +1,11 @@
 /**
  * Local Server Play - npm run play
  * IP addresss: localhost
- * 
  */
 
 const net = require("net");
+const {IP, PORT} = require("./constants");
+
 // establishes a connection with the game server
 const connect = function() {
   /**
@@ -13,8 +14,8 @@ const connect = function() {
    * conn obj has useful methods and properties to interact with the server
    */
   const conn = net.createConnection({ // the connection with the server
-    host: "localhost",  // IP address here,
-    port: 50541         // PORT number here,
+    host: IP,  // IP address here,
+    port: PORT         // PORT number here,
   });
   conn.setEncoding("utf8"); // interpret incoming data as text
 
