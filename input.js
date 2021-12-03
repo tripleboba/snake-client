@@ -17,17 +17,22 @@ const handleUserInput = function(data){
     process.exit();
   }
   // handle keyboard input
+  // need to press keys when on client terminal, not the board display server
   switch (data) {
     case 'w':
       console.log('up');
+      connection.write("Move: up");
       break;
     case 'a':
       console.log('left');
+      connection.write("Move: left");
       break;
     case 's':
       console.log('down');
+      connection.write("Move: down");
     case 'd':
       console.log('right');
+      connection.write("Move: right");
   }
 };
 
@@ -47,5 +52,16 @@ const setupInput = (conn) => {
   return stdin;   // stdin obj listening for keyboard input and react to it
 };
 
-
 module.exports = {setupInput};
+
+/**
+ * Note:
+ * How connection object is being passed around:
+ *    - connect() returns an object that can be used to interact with the server
+ *    - the object returned by connect() should be passed into setupInput()
+ *    - setupInput() places a reference to that object in another variable connection
+ *      which is in a global scope of that module
+ * When data comes in from your keyboard, the stdin event handler can now interact with the server
+ * because the scope in the handler now includes both data from the keyboard AND the connection object!
+ * Your input module can now use the connection variable to send movement commands/messages to the server.
+ */
