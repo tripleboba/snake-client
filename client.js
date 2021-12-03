@@ -26,6 +26,5 @@ const connect = function() {
 
   return conn;
 };
-console.log("Connecting....");
 
 module.exports = {connect}; // exports using es6 syntax
