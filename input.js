@@ -22,17 +22,21 @@ const handleUserInput = function(data){
     case 'w':
       console.log('up');
       connection.write("Move: up");
+      connection.write("Say: beep beep");
       break;
     case 'a':
       console.log('left');
       connection.write("Move: left");
+      connection.write("Say: ding ding");
       break;
     case 's':
       console.log('down');
       connection.write("Move: down");
+      connection.write("Say: dong dong");
     case 'd':
       console.log('right');
       connection.write("Move: right");
+      connection.write("Say: skitzz skitzz");
   }
 };
 
