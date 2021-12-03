@@ -7,6 +7,6 @@ const {connect} = require("./client");  // exports using es6 syntax
 const {setupInput} = require("./input");
 
 console.log("Connecting....");
-connect();
+const conn = connect(); // conn - return obj from connect 
 
-setupInput();
+setupInput(conn); // pass conn into setupInput
