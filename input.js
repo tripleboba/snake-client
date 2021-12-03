@@ -18,15 +18,15 @@ const handleUserInput = function(data){
   }
   // handle keyboard input
   switch (data) {
-    case 'w'.toLowerCase:
+    case 'w':
       console.log('up');
       break;
-    case 'a'.toLowerCase:
+    case 'a':
       console.log('left');
       break;
-    case 's'.toLowerCase:
+    case 's':
       console.log('down');
-    case 'd'.toLowerCase:
+    case 'd':
       console.log('right');
   }
 };
